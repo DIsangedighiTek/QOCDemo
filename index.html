@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qatar Olympic Copilot Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#home">
+        <div class="brand-mark">
+          <svg viewBox="0 0 90 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M45 0L13 17v49c0 18 13 29 32 29s32-11 32-29V17L45 0z" fill="#8A1034"/>
+            <path d="M45 11C27 11 13 18 13 24s14 13 32 13 32-6 32-13-14-13-32-13z" fill="#fff"/>
+            <text x="45" y="47" font-size="12" font-family="Inter, sans-serif" font-weight="700" fill="#fff" text-anchor="middle">QATAR</text>
+            <g transform="translate(5,60) scale(0.65)" stroke="#fff" stroke-width="4" fill="none">
+              <circle cx="28" cy="8" r="8"/>
+              <circle cx="48" cy="8" r="8"/>
+              <circle cx="68" cy="8" r="8"/>
+              <circle cx="38" cy="20" r="8"/>
+              <circle cx="58" cy="20" r="8"/>
+            </g>
+          </svg>
+        </div>
+        <div class="brand-label">
+          <span>Olympic</span>
+          <small>Committee</small>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#sports">Sports</a>
+        <a href="#team">Team</a>
+        <a href="#events">Events</a>
+        <a href="#reports">Annual Reports</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" aria-label="Search"></button>
+        <button class="icon-button" aria-label="Accessibility"></button>
+        <button class="language">AR</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero-panel" id="home">
+    <div class="hero-backdrop"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <section class="hero-copy">
+        <p class="eyebrow">Empowering sports in Qatar</p>
+        <h1>Empowering <span>Athletes</span>,<br />Inspiring <span>Generations</span></h1>
+        <p>Experience the Qatar Olympic style with rich imagery, real event storytelling, and a floating Copilot assistant built for the site.</p>
+        <div class="hero-buttons">
+          <button class="button button-primary" id="openAgent">Gallery Images</button>
+          <a class="button button-secondary" href="#events">Event Calendar</a>
+        </div>
+      </section>
+
+      <section class="hero-side">
+        <div class="hero-image-card">
+          <img src="/image/bg-red-final-1920X1080.png" alt="Qatar sports team" />
+          <div class="hero-image-tag">Qatar Team</div>
+          <div class="hero-image-text">
+            <p>Official athlete spotlight</p>
+          </div>
+        </div>
+        <div class="hero-info-card">
+          <div class="event-card">
+            <div class="event-date">
+              <strong>02</strong>
+              <span>May 2026</span>
+            </div>
+            <div class="event-summary">
+              <span>Qatar Cup Football Final</span>
+              <p>Doha Arena</p>
+            </div>
+            <div class="event-countdown">
+              <div><strong>4</strong><small>Day</small></div>
+              <div><strong>1</strong><small>Hour</small></div>
+              <div><strong>50</strong><small>Minute</small></div>
+              <div><strong>52</strong><small>Second</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <section class="feature-strip" id="about">
+    <div class="feature-card">
+      <h3>Official sport initiatives</h3>
+      <p>Connecting athletes, fans, and communities through world-class programs and event experiences.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Event intelligence</h3>
+      <p>Real-time schedules, venue navigation, and highlights help visitors stay ahead of every competition.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Engagement support</h3>
+      <p>A floating assistant bubble keeps fans informed without interrupting the browsing journey.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="reports">
+    <div>
+      <p class="eyebrow">Get involved</p>
+      <h2>Discover Qatar’s upcoming sports and Olympic legacy.</h2>
+    </div>
+    <a href="mailto:demo@olympic.qa" class="button button-primary">Contact Us</a>
+  </footer>
+
+  <div class="agent-bubble" id="agentBubble">
+    <button
+      id="open-chat"
+      onclick="showChat()"
+      aria-label="Open Chat Assistant"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path
+          d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+        ></path>
+      </svg>
+    </button>
+    <div class="bubble-panel" id="bubblePanel" aria-hidden="true">
+      <div class="bubble-header">
+        <div>
+          <p class="eyebrow">Live assistant</p>
+          <h3>Olympic help center</h3>
+        </div>
+        <button class="close-button" id="bubbleClose" aria-label="Minimize assistant">✕</button>
+      </div>
+      <div class="bubble-messages" id="bubbleMessages"></div>
+      <form class="bubble-form" id="bubbleForm">
+        <input id="bubbleInput" type="text" placeholder="Ask about events, tickets or venues..." autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
