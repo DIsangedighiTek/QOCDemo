@@ -433,6 +433,7 @@ button, input {
 
 .agent-bubble.open .bubble-panel {
   transform: translateY(0);
+  align-items: right;
   opacity: 1;
   visibility: visible;
 }
